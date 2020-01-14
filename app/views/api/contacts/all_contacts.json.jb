@@ -1,0 +1,13 @@
+
+
+ @contacts.map do |contact| #remember no need to initiate a new array, cause map returns a new array 
+   {
+    id: contact.id, 
+    firstname: contact.firstname, 
+    lastname: contact.lastname, 
+    email: contact.email, 
+    phone_number: contact.phone_number
+  }
+ end
+
+ 
