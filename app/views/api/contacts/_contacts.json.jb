@@ -1,0 +1,12 @@
+{
+  id: contact.id, 
+  firstname: contact.firstname, 
+  lastname: contact.lastname, 
+  full_name: contact.full_name,
+  email: contact.email, 
+  phone_number: contact.phone_number,
+  formatted:
+  {
+    updated_at: contact.friendly_updated_at #the @ is needed cause we are referring to a specific contact within the contact app
+  }
+}
