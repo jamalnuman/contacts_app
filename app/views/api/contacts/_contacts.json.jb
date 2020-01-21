@@ -1,8 +1,10 @@
 {
   id: contact.id, 
-  firstname: contact.firstname, 
+  firstname: contact.firstname,
+  middlename: contact.middlename, 
   lastname: contact.lastname, 
   full_name: contact.full_name,
+  bio: contact.bio,
   email: contact.email, 
   phone_number: contact.phone_number,
   formatted:
