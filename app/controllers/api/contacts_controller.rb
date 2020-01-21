@@ -21,6 +21,22 @@ class Api::ContactsController < ApplicationController
     render 'show.json.jb'
   end
   
+  def update
+    @contact = Contact.find(params[:id])
 
+    @contact.firstname = params[:firstname] || @contact.firstname
+    @contact.lastname = params[:lastname] || @contact.lastname
+    @contact.email = params[:email] || @contact.email
+    @contact.phone_number = params[:phone_number] || @contact.phone_number
+
+    @contact.save
+    render "show.json.jb"
+  end
+
+    def destroy
+      contact = Contact.find(params[:id])
+      contact.destroy
+      render json: {message: "Contact #{contact.id} has successfully been removed."}
+    end 
 
 end

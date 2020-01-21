@@ -1,7 +1,6 @@
 class Contact < ApplicationRecord
   def full_name
-    full_name = "#{firstname} #{lastname}" #has 'self' under the hood
-    full_name
+    "#{firstname} #{lastname}" #has 'self' under the hood
   end
 
   def friendly_updated_at
