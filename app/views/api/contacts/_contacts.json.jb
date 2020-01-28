@@ -7,8 +7,9 @@
   bio: contact.bio,
   email: contact.email, 
   phone_number: contact.phone_number,
+  user: contact.user,
   formatted:
   {
-    updated_at: contact.friendly_updated_at 
+     updated_at: contact.friendly_updated_at 
   }
 }
