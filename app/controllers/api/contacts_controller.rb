@@ -1,7 +1,6 @@
 class Api::ContactsController < ApplicationController
  
   def index
-
     group = params[:group]
 
     if current_user
@@ -9,7 +8,7 @@ class Api::ContactsController < ApplicationController
       render 'index.json.jb'
     elsif group
       group = Group.find_by(name: group)
-      @contacs = group.contacts
+      @contacts = group.contacts
       render 'index.json.jb'
     else
       render json: {} 
