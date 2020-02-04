@@ -1,14 +1,15 @@
 class Api::ContactsController < ApplicationController
  
   def index
-    group = params[:group]
-
     if current_user
-      @contacts = current_user.contacts
-      render 'index.json.jb'
-    elsif group
-      group = Group.find_by(name: group)
-      @contacts = group.contacts
+      group = params[:group]
+      
+        if group
+          group = Group.find_by(name: group)#looking for the group that was passed into the param on line-5
+          @contacts = group.contacts.where(user_id: current_user.id) #then assigning @contacts to the contacts that are associated to the group varaible on line 8
+        else
+          @contacts = current_user.contacts #this is why you only get the users assigned to the logged in user, instead of all the users 
+        end
       render 'index.json.jb'
     else
       render json: {} 

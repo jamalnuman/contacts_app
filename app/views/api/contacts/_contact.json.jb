@@ -7,8 +7,8 @@
   bio: contact.bio,
   email: contact.email, 
   phone_number: contact.phone_number,
-  user: (render partial: "api/users/user.json.jb", locals: {user: contact.user}),
-  groups: contact.groups.map { | group | render partial: '_api/groups/group.json.jb', locals: {group: group} },
+  user: (render partial: "api/users/user.json.jb", locals: {user: contact.user}), #use the user's partial to not give out the user's password digest..that is a huge security risk..the partial allows you to give out/display the information you want
+  groups: contact.groups.map { | group | render partial: 'api/groups/group.json.jb', locals: {group: group} },#this is the group partial..and the full path is defined cause it is in a different folder 
   formatted:
   {
      updated_at: contact.friendly_updated_at 
